@@ -1,5 +1,8 @@
 require("dotenv").config();
 const authRoutes = require("./routes/auth");
+const userRoutes=require("./routes/user");
+const categoryRoutes=require("./routes/category");
+
 const mongoose = require("mongoose");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -24,6 +27,9 @@ app.use(cors());
 
 //routes
 app.use("/api", authRoutes);
+app.use("/api", userRoutes);
+app.use("/api", categoryRoutes);
+
 
 app.listen(port, () => {
   console.log(`APP is running at ${port}`);
