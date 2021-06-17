@@ -86,7 +86,7 @@ exports.signout=function (req, res) {
   }
 
   exports.isAdmin=(req,res,next)=>{
-      if(res.profile.role===0){
+      if(req.profile.role===0){
           return res.status(403).json({error:"ACESS DENIED,You are not admin"})
       }
     next();
